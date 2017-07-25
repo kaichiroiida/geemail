@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  to: MyString
+  subject: 
+  text: MyString
+  date: MyString
+
+two:
+  to: MyString
+  subject: 
+  text: MyString
+  date: MyString

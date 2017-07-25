@@ -1,0 +1,37 @@
+<%= form_for(gee_mail) do |f| %>
+  <% if gee_mail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gee_mail.errors.count, "error") %> prohibited this gee_mail from being saved:</h2>
+
+      <ul>
+      <% gee_mail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :to %>
+    <%= f.text_field :to %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+  </div>
+
+  <div class="field">
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

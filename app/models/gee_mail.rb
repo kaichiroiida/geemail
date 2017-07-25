@@ -1,0 +1,2 @@
+class GeeMail < ApplicationRecord
+end

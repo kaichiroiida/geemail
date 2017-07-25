@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>To:</strong>
+  <%= @gee_mail.to %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @gee_mail.subject %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @gee_mail.text %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @gee_mail.date %>
+</p>
+
+<%= link_to 'Edit', edit_gee_mail_path(@gee_mail) %> |
+<%= link_to 'Back', gee_mails_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gee Mails</h1>
+<p>Gmailを利用して時間指定でメールを送るWebページです。</p>
+  
+  <tbody>
+    <% @gee_mails.each do |gee_mail| %>
+      <tr>
+        <td><%= gee_mail.to %></td>
+        <td><%= gee_mail.subject %></td>
+        <td><%= gee_mail.text %></td>
+        <td><%= gee_mail.date %></td>
+        <td><%= link_to 'Show', gee_mail %></td>
+        <td><%= link_to 'Edit', edit_gee_mail_path(gee_mail) %></td>
+        <td><%= link_to 'Destroy', gee_mail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      </br>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gee Mail', new_gee_mail_path %>
