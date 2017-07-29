@@ -58,3 +58,4 @@ gem 'less-rails' # Railsでlessを使えるようにする。Bootstrapがlessで
 gem 'twitter-bootstrap-rails' # Bootstrapの本体
 gem 'devise'
 gem 'omniauth-twitter'
+gem 'ruby-gmail'

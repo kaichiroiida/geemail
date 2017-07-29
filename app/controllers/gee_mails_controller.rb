@@ -15,7 +15,7 @@ class GeeMailsController < ApplicationController
   # GET /gee_mails/new
   def new
     @gee_mail = GeeMail.new
-
+    @time = Time.now
   end
 
   # GET /gee_mails/1/edit
@@ -29,7 +29,7 @@ class GeeMailsController < ApplicationController
 
     respond_to do |format|
       if @gee_mail.save
-        test_sender
+        mail_sender
     p '##################################################'
     p @gee_mail
     p '##################################################'
@@ -66,14 +66,20 @@ class GeeMailsController < ApplicationController
     end
   end
 
+  def mail_send
+    @mail = GeeMailer.sendmail_confirm.deliver
+    render :text => 'send finish'
+  end
+  
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_gee_mail
-      @gee_mail = GeeMail.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_gee_mail
+    @gee_mail = GeeMail.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def gee_mail_params
-      params.require(:gee_mail).permit(:to, :subject, :text, :date)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def gee_mail_params
+    params.require(:gee_mail).permit(:to, :subject, :text, :date)
+  end
+    
 end

@@ -8,11 +8,11 @@ module Mailer
   def test_sender                                                                          
     p "test_sender"                                                                        
   end                                                                                      
-=begin                                                                                           
+  
   def mail_sender                                                                          
-    USERNAME = "ksteadymail@gmail.com"                                                     
-    PASSWORD = "iqXE8i6n"                                                                  
-    gmail = Gmail.new(USERNAME, PASSWORD)                                                  
+    @username = "ksteadymail@gmail.com"                                                     
+    @password = "iqXE8i6n"                                                                  
+    gmail = Gmail.new(@username, @password)                                                  
                                                                                            
     message =                                                                              
       gmail.generate_message do                                                            
@@ -24,7 +24,7 @@ module Mailer
         end                                                                                
       end                                                                                  
                                                                                            
-   timer("06:51:58") do  #ここが時間調整                                                   
+   timer("06:56:58") do  #ここが時間調整                                                   
    gmail.deliver(message)                                                                  
    gmail.logout                                                                            
    end                                                                                     
@@ -40,5 +40,4 @@ module Mailer
     sleep x if block_given?                                                                
     yield                                                                                  
   end 
-=end                                                                                     
 end                                                        
